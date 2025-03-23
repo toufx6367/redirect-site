@@ -17,6 +17,7 @@
             margin-bottom: 20px;
             color: #fff;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            animation: arrowMove 1.5s infinite alternate ease-in-out;
         }
         .btn {
             display: inline-block;
@@ -32,11 +33,12 @@
             box-shadow: 0 4px 10px rgba(255, 105, 180, 0.5);
             transition: 0.3s;
             position: relative;
+            animation: bounce 1.5s infinite ease-in-out;
         }
         .btn:hover {
             background: linear-gradient(45deg, #ff4f70, #ff75a0);
             box-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
-            transform: scale(1.08);
+            transform: scale(1.08) rotate(2deg);
         }
         .btn::after {
             content: "💖";
@@ -51,6 +53,16 @@
             opacity: 1;
             transform: scale(1.2);
         }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        @keyframes arrowMove {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(10px); }
+        }
     </style>
 </head>
 <body>
@@ -60,6 +72,3 @@
 
 </body>
 </html>
-
-
-
